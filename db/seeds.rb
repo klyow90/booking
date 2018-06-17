@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user = User.create({name: 'admin', email: 'admin@test.com', password: '1234567a'})
-user.save
-
-facility = Facility.create([{name: 'Room A'},{name: 'Macbook 001'}])
-facility.save
+facility = Facility.create({name: 'Room A'})
+Reservation.create({start: '2018-06-10 10:00:00', end: '2018-06-10 12:00:00', user_id: user.id, facility_id: facility.id });
+Reservation.create({start: '2018-06-10 15:00:00', end: '2018-06-10 15:30:00', user_id: user.id, facility_id: facility.id });
+Reservation.create({start: '2018-06-13 14:00:00', end: '2018-06-13 15:00:00', user_id: user.id, facility_id: facility.id });

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get '/reserve', to: 'reserves#index'
-  get '/reserve/new', to: 'reserves#new'
+  get '/reservation', to: 'reservations#index'
+  get '/reservation/new', to: 'reservations#new'
   
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

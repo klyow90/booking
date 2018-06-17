@@ -1,0 +1,40 @@
+<script>
+$(function() {
+    $('#calendar').fullCalendar({
+        selectable: true,
+        header: {
+            left: 'month,agendaWeek,agendaDay custom1',
+            center: 'title',
+            right: 'custom2 prevYear,prev,next,nextYear'
+        },
+        footer: {
+            center: '',
+        },
+        select: function(startDate, endDate) {
+            alert('selected ' + startDate.format() + ' to ' + endDate.format());
+        },
+        events: 
+        [
+            <% @reservations.each do |reservation| %>
+            {
+                title  : "<%= reservation.facility.name %>",
+                description: "<%= reservation.user.name %>",
+                start  : "<%= reservation.start.strftime("%Y-%m-%dT%H:%M:%S") %>",
+                end    : "<%= reservation.end.strftime("%Y-%m-%dT%H:%M:%S") %>",
+                allDay : false
+            },
+            <% end %>
+        ],
+        eventRender: function(eventObj, $el) {
+            $el.popover({
+                title: "Reservation details",
+                content: eventObj.title + ", reserved by " +eventObj.description,
+                trigger: 'hover',
+                placement: 'top',
+                container: 'body'
+            });
+        }
+    });
+});
+</script>
+<div id='calendar'></div>
