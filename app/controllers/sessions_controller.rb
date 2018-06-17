@@ -2,7 +2,6 @@ class SessionsController < ApplicationController
   include SessionsHelper
 
   def new
-
   end
 
   def create
@@ -12,14 +11,14 @@ class SessionsController < ApplicationController
       log_in user
       redirect_to users_url
     else
-      flash[:danger] = "Invalid email or password."
-      render 'new'
+      flash[:error] = "Invalid email or password."
+      redirect_to login_url
     end
   end
 
   def destroy
     log_out
-    flash[:success] = "Logout successfully."
-    redirect_to root_url
+    flash[:notice] = "Logout successfully."
+    redirect_to login_url
   end
 end
