@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get '/reservation', to: 'reservations#index'
   get '/reservation/new', to: 'reservations#new'
+  post '/reservation/create', to: 'reservations#create'
   
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
@@ -10,4 +11,5 @@ Rails.application.routes.draw do
 
   resources :users
   resources :facilities
+  resources :reservations
 end

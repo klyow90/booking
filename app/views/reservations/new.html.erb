@@ -1,0 +1,14 @@
+<h1>New Reservation</h1>
+
+<%= render 'form', reservation: @reservation %>
+
+<%= link_to 'Back', reservations_url %>
+
+<script>
+  $( function() {
+    $("#reservation_start_date, #reservation_end_date").datepicker({
+        minDate: 0,
+        dateFormat: 'yy-mm-dd'
+    });
+  });
+  </script>
