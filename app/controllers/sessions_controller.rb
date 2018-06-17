@@ -2,6 +2,9 @@ class SessionsController < ApplicationController
   include SessionsHelper
 
   def new
+    if logged_in?
+      redirect_to reservations_url
+    end
   end
 
   def create
