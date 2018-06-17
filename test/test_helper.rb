@@ -7,4 +7,9 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  def sign_in
+    User.delete_all
+    User.create({name: 'MyString', email: 'MyString', password: '1234567a'})
+    post login_url, params: { session: {email: 'MyString', password: '1234567a'} }
+  end
 end
