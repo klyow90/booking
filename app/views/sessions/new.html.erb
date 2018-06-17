@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-md-offset-4 col-md-3">
+        <div class="form-login">
+            <h1>Log in</h1>
+            <br />
+            <%= form_for(:session, url: login_path) do |f| %>
+                <%= f.email_field :email, class: 'form-control input-sm chat-input', placeholder: 'username' %>
+                <br />
+                <%= f.password_field :password, class: 'form-control input-sm chat-input', placeholder: 'password' %>
+                <br />
+                <%= f.submit 'Log in', class: 'btn btn-primary btn-md' do %>
+                    Login <i class="fa fa-sign-in"></i>
+                <% end %>    
+            <% end %>
+        </div>
+    </div>
+</div>
