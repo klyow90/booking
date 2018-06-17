@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
   include SessionsHelper
 
   def new
+
   end
 
   def create
@@ -18,6 +19,7 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out
+    flash[:success] = "Logout successfully."
     redirect_to root_url
   end
 end
