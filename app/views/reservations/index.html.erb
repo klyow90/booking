@@ -3,15 +3,23 @@ $(function() {
     $('#calendar').fullCalendar({
         selectable: true,
         header: {
-            left: 'month,agendaWeek,agendaDay custom1',
+            left: 'month,agendaWeek,agendaDay',
             center: 'title',
-            right: 'custom2 prevYear,prev,next,nextYear'
+            right: 'reservation prevYear,prev,next,nextYear'
         },
         footer: {
             center: '',
         },
         select: function(startDate, endDate) {
-            alert('selected ' + startDate.format() + ' to ' + endDate.format());
+            window.location.href = "<%= reservation_new_url %>";
+        },
+        customButtons: {
+            reservation: {
+                text: 'New reservation',
+                click: function() {
+                    window.location.href = "<%= reservation_new_url %>";
+                }
+            }
         },
         events: 
         [

@@ -1,4 +1,6 @@
 class ReservationsController < ApplicationController
+  before_action :check_session
+  
   def index
     @reservations = Reservation.all
   end

@@ -1,5 +1,6 @@
 class FacilitiesController < ApplicationController
   before_action :set_facility, only: [:edit, :update, :destroy]
+  before_action :check_session
 
   # GET /facilities
   # GET /facilities.json
