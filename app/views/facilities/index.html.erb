@@ -1,0 +1,37 @@
+<%= content_for(:title, "Facilities") %>
+<div class="row col-md-6 col-md-offset-2 custyle">
+  <h1>Facilities</h1>
+  <br />
+  <table class="table table-striped custab">
+    <thead>
+      <%= link_to new_facility_path, class: 'btn btn-primary btn-xs pull-right' do %>
+        <b>+</b> Add new facility
+        <% end %>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th class="text-center">Action</th>
+          </tr>
+    </thead>
+    <tbody>
+      <% @facilities.each do |facility| %>
+        <tr>
+          <td>
+            <%= facility.id %>
+          </td>
+          <td>
+            <%= facility.name %>
+          </td>
+          <td class="text-center">
+            <%= link_to edit_facility_path(facility), class: 'btn btn-info btn-xs' do %>
+              <span class="glyphicon glyphicon-edit"></span> Edit
+            <% end %>
+            <%= link_to facility, method: :delete, data: { confirm: 'Are you sure to delete facility: ' + facility.name + '?' }, class: 'btn btn-info btn-xs' do %>
+              <span class="glyphicon glyphicon-remove"></span> Del
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

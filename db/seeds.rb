@@ -8,3 +8,6 @@
 
 user = User.create({name: 'admin', email: 'admin@test.com', password: '1234567a'})
 user.save
+
+facility = Facility.create([{name: 'Room A'},{name: 'Macbook 001'}])
+facility.save
