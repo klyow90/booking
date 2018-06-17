@@ -3,7 +3,7 @@
         <div class="form-login">
             <h1>Log in</h1>
             <br />
-            <%= form_for(:session, url: login_path) do |f| %>
+            <%= form_for(:session, url: login_url) do |f| %>
                 <%= f.email_field :email, class: 'form-control input-sm chat-input', placeholder: 'username' %>
                 <br />
                 <%= f.password_field :password, class: 'form-control input-sm chat-input', placeholder: 'password' %>

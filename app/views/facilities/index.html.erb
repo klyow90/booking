@@ -29,6 +29,12 @@
             <%= link_to facility, method: :delete, data: { confirm: 'Are you sure to delete facility: ' + facility.name + '?' }, class: 'btn btn-info btn-xs' do %>
               <span class="glyphicon glyphicon-remove"></span> Del
             <% end %>
+            <%= link_to reserve_url, class: 'btn btn-info btn-xs' do %>
+              <span class="glyphicon glyphicon-list"></span> Reserve
+            <% end %>
+            <%= link_to reserve_new_path, class: 'btn btn-info btn-xs' do %>
+              <span class="glyphicon glyphicon-check"></span> Check
+            <% end %>
           </td>
         </tr>
       <% end %>

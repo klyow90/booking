@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :facilities
+  get '/reserve', to: 'reserves#index'
+  get '/reserve/new', to: 'reserves#new'
+  
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
@@ -7,4 +9,5 @@ Rails.application.routes.draw do
   root 'sessions#new'
 
   resources :users
+  resources :facilities
 end
