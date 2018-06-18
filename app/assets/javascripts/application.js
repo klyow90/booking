@@ -16,5 +16,6 @@
 //= require moment.min.js
 //= require jquery.min.js
 //= require jquery-ui.min.js
+//= require bootstrap.min.js
 //= require fullcalendar.min.js
 //= require_tree .
